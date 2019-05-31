@@ -1,0 +1,82 @@
+@import url(reset.css);
+
+.content-box{
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 880px;
+    height: inherit;
+    min-height: inherit;
+    background-color: rgba(255, 219, 101, 0.3);
+}
+
+.clear-fix::after{
+    content: ".";
+    height: 0px;
+    overflow: hidden;
+    display: block;
+    clear: left;
+}
+
+/* ================================ */
+
+#header{
+    height: 80px;
+    background: #ffffff;
+}
+
+/* -------------------------------- */
+
+#body{
+    min-height: 530px;
+    background: #f9bc00;
+}
+#information{
+    min-height: 300px;
+    background: #ffffff;
+}
+#information>.content-box>aside{
+    min-height: inherit;
+    width: 300px;
+    background: #ff6325;
+    float: left;
+}
+
+#information>.content-box>section{
+    min-height: inherit;
+    width: 580px;
+    background: #ff2525;
+    float: left;
+}
+
+#zig-app{
+    min-height: 365px;
+    background: #e0e0e0;
+
+}
+#for-mediation{
+    min-height: 60px;
+    background: #ffffff;
+}
+/* -------------------------------- */
+
+#footer{
+    height: 280px;
+    background:#e0e0e0;
+}
+
+/* -------------------------------- */
+
+h1{
+    color:rgba(255, 0, 76, 0.5);
+}
+#main-menu-list{
+    color:#444422;
+}
+.menu-list{
+    color:aquamarine;
+}
+#body span{
+    color: #f6f6f6;
+    font-size:15px;
+}

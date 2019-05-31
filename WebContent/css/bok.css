@@ -1,0 +1,270 @@
+@import url(reset.css);
+h1{
+    color: #444444;
+}
+.content-box{
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    height: inherit;
+    min-height: inherit;
+    --background-color: rgba(0, 0, 200, 0.3)
+}
+
+.clear-fix::after{
+    content: ".";
+    height: 0px;
+    overflow: hidden;
+    display: block;
+    clear: left;
+}
+
+/* ================================ */
+
+#header{
+    position: fixed;
+    z-index: 101;
+    background: #ffffff;
+    width: 1920px;
+    height: 80px;
+}
+header h1{
+    font-size: 0px;
+}
+.headerCon{
+    position: relative;
+    margin-top: 17px;
+    margin-left: 40px;
+}
+#header .logo{
+    float: left;
+}
+
+#main-menu-list{
+    list-style-type: none;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+}
+    #main-menu-list li{
+        font-size: 14px;
+        font-weight: 500;
+        float: left;
+    }
+    #main-menu-list li a, .dropbtn {
+        display: inline-block;
+        color: #222222;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    #main-menu-list li a:hover, .dropdown:hover .dropbtn {
+        color: #f39e00
+    }
+    #main-menu-list li .dropdown {
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    .dropdown-content a:hover {background-color: #f1f1f1;}
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+
+.header-right {
+    position: fixed;
+    right: 20px;
+    top: 0px;
+    width: 350px;
+ 
+}
+
+
+#header .for-member li{
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 14px;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    
+}
+
+#header .for-member li a {
+    text-decoration: none;
+    list-style-type: none;
+    color: #222222;
+    margin-top: 27px;
+    margin-right: 10px;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    
+}
+.for-add {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+}
+
+
+/* -------------------------------- */
+
+.searchbar{
+    margin-left: auto;
+    margin-right: auto;
+    width: inherit;
+    height: 150px;
+    top: 380px;
+    position : relative;
+    min-height: inherit;
+    background-color: rgba(0, 0, 0, 0.3)
+}
+.search-list{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-list a{
+    text-decoration: none;
+    color: #ffffff;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-list a>span{
+    color: #ffffff;
+    font-size:15px;
+    font-weight: 400;
+}
+#visual{
+    top: 80px;
+    height: 530px;
+    position : relative;
+    background: #ff5454;
+    background-image: url(../img/main_2018.png);
+}
+
+#visual h1{
+    font-size: 0px;
+}
+
+#visual li{
+    list-style-type: none;
+    color: #ffffff;
+    margin-right: 33px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    padding: 0;
+    float: left;
+}
+#visual li>span{
+    color: #ffffff;
+    font-size:15px;
+    font-weight: 400;
+}
+.searchbar>div{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* -------------------------------- */
+
+#body{
+    min-height: 365px;
+    margin-top: 80px;
+    position: relative;
+}
+
+.m-banner{
+    min-height: inherit;
+    margin-top: 40px;
+    width: 260px;
+    float: left;
+}
+    
+.m-contents{
+    min-height: inherit;
+    margin-top: 40px;
+    width: 330px;
+    float: left;
+}
+
+.m-contents li{
+    list-style-type: none;
+    color: #222222;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 0;
+    float: left;
+}
+.m-contents li>span{
+    list-style-type: none;
+    color: #222222;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 0;
+    float: left;
+}
+
+#body h1{
+    font-size: 0px;
+}
+
+#body>.content-box{
+    min-height: 365px;
+    margin-top: 80px;
+    position: relative;
+}
+.img-box>span{
+    width: 480;
+    margin-right: 30px;
+    padding-left: 60px;
+    float: left;
+}
+.zigbang-app{
+    width: 960px;
+    min-height: 325px;
+    background-color: #f6f6f6;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#apps{
+    background-color: #f6f6f6;
+}
+#apps h1{
+    font-size: 0px;
+}
+/* -------------------------------- */
+
+#footer{
+    height: 100px;
+    background: rgb(255,30,0);
+}
+
+/* -------------------------------- */

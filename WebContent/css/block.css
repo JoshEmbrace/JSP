@@ -1,0 +1,256 @@
+body{
+    margin: 0;
+}
+div{
+    
+}
+
+dt{
+    float: left;
+    margin: 0px;
+}
+
+dd{
+    float: left;
+    margin: 0px;
+}
+/* ul{
+    float: left;
+} */
+li{
+    float: left;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+:-ms-input-placeholder {color: #a8a8a8;}
+::-webkit-input-placeholder {color: #a8a8a8;}
+::-moz-placeholder {color: #a8a8a8;}
+
+/* ------------header------------ */
+
+#header{
+    height: 80px;
+    width: 100%;
+    /* position: fixed;
+    z-index: 101; */
+    border-bottom: 1px solid #e1e1e1;
+    background: #ffffff;
+}
+
+#header .index-logo>img{
+    margin-top: 13px;
+    margin-left: 35px;
+}
+
+#header>div{
+    position: relative;
+    padding: 15px 20px 0px 32px;
+}
+
+#header h1 {
+    float: left;
+}
+
+#header section{
+    float: left;
+}
+#header section h1{
+    display: none;
+}
+
+#header div{
+    display: inline;
+}
+
+#header .gnav{
+    margin-top: 25px;
+}
+
+#header .gnav li{
+    margin-right: 20px;
+}
+
+#header .user-menu li{
+    margin-right: 12px;
+}
+#header .header-right-menu{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 350px;
+}
+#header .register-link-box img{
+    width: 155px;
+    height: 50px;
+}
+
+
+/* ------------body------------ */
+#body{
+    min-height: 900px;
+    background: #ffffff;
+}
+
+#body h1{
+    display: none;
+}
+
+#body .main-visual{
+    width: 100%;
+    height: 600px;
+    background: #f9bc00;
+    position: relative;
+}
+    #body .black-layer{
+        background: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 420px;
+        left: 0;
+        width: 100%;
+        height: 180px;
+    }
+
+    #body .main-searchform{
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+    #body .black-layer li{
+        color: #ffffff;
+        margin-right: 33px;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -1px;
+        padding: 0;
+        float: left;
+    }
+    #body .black-layer li span{
+        color: #ffffff;
+        font-size:15px;
+        font-weight: 400;
+    }
+
+    #body .main-searchbar{
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 45px;
+        height: 60px;
+        width: 800px;
+        border: 4px solid #f9a200;
+        background: #ffffff;
+    }
+
+    #body .main-searchbar input{
+        font-size: 18px;
+        margin-top: 7px;
+        width: 680px;
+        padding: 10px;
+        border: 0px;
+        outline: none;
+        float: left;
+    }
+
+    #body .main-searchbar button{
+        font-size: 18px;
+        font-weight: 600;
+        width: 100px;
+        height: 100%;
+        border: 0px;
+        background: #f9a200;
+        outline: none;
+        float: right;
+        color: #ffffff;
+    }
+
+
+#body .main-sndrow{
+    min-height: 345px;
+    width: 100%;
+    background: #ffffff;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+    #body .main-sndrow>.m-register{
+        min-height: inherit;
+        width: 300px;
+        background: #ffc4c4;
+        float: left;
+        text-align: center;
+        padding-top: 30px;  
+    }
+    #body .main-sndrow>.m-register>img{
+        width: 260px;
+        margin: 0 auto;
+    }
+    #body .main-sndrow>.m-news{
+        background: #ff8686;
+        min-height: inherit;
+        padding-top: 30px; 
+        width: 330px;
+        float: left;
+    }
+    #body .main-sndrow>.m-news>li{
+        list-style-type: none;
+        color: #222222;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 0;
+        float: left;
+    }
+    #body .main-sndrow>.m-notice{
+        background: #ff8686;
+        min-height: inherit;
+        padding-top: 30px; 
+        width: 330px;
+        float: left;
+    }
+    #body .main-sndrow>.m-notice>li{
+        list-style-type: none;
+        color: #222222;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 0;
+        float: left;
+    }
+
+#body .main-trdrow{
+    min-height: 365px;
+    width: 100%;
+    background: #f6f6f6;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* ------------footer------------ */
+#footer{
+    min-height: 330px;
+    background: #f6f6f6;
+}

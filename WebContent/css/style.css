@@ -1,0 +1,440 @@
+@import url(reset.css);
+
+.content-box{
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    height: inherit;
+    min-height: inherit;
+    display: flex;
+    --background-color: rgba(0, 0, 200, 0.3)
+}
+
+.clear-fix::after{
+    content: ".";
+    height: 0px;
+    overflow: hidden;
+    display: block;
+    clear: left;
+}
+
+.d-none{
+    display: none;
+}
+
+.color-highight{
+    color: #ff6a00;
+}
+.font-bold{
+    font-weight: bold;
+}
+
+body *{
+    box-sizing: border-box;
+}
+/* ================================ */
+
+#header{
+    height: 70px;
+    --background: #f6f6f6;
+}
+
+/* -------------------------------- */
+
+#visual{
+    height: 171px;
+    background: #313131 url("../images/bg-visual.png") no-repeat center;
+    background-position: center;
+    border-top: 3px solid #8cba34;
+}
+    #visual .content-box{
+        height: 171px;
+        --background: #313131 url("../images/bg-visual.png") no-repeat center;
+        background-position: top right;
+        border-top: 3px solid #8cba34;
+    }
+
+
+/* -------------------------------- */
+
+#body{
+    min-height: 300px;
+    border-top: 5px solid #8cba34;
+    margin-top: 1px;
+    --background: rgb(255, 123, 0);
+    --background-image: url(../img/iu.png);
+    
+}
+    #body>.content-box{
+        display: flex;
+        flex-direction: row;
+        background: url(../images/bg-body.png) repeat-y;
+        padding-bottom: 50px;
+    }
+
+    #body>.content-box>aside{
+        min-height: inherit;
+        width: 205px;
+        /* background-image: url(../images/bg-body.png) ; */
+        background:url(../images/bg-aside-title.png) no-repeat right top;
+        background-size: contain;
+        float: left;
+
+    }
+
+
+    #body>.content-box>main{
+        padding-top: 45px;
+        padding-left: 35px;
+        min-height: inherit;
+        width: 755px;
+        --background-image: url(../img/jh.png);
+        float: left;
+        
+    }
+
+/* -------------------------------- */
+
+#footer{
+    height: 100px;
+    background: #313131;
+}
+
+/* ---콘텐츠 스타일 + 콘텐츠 블록----------------------------- */
+
+body{
+    font-family: "돋움", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #979797;
+}
+
+#logo{
+    background: url("../images/logo.png") no-repeat center;
+    width: 182px; height: 35px;
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+#main-menu{
+    display: inline-block;
+    font-family: "맑은 고딕";
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+}
+    #main-menu>ul {
+        display: flex;
+    }
+
+    #main-menu>ul>li {
+        padding-left: 24px;
+        background: url("../images/bg-main-menu-vsp.png") no-repeat 12px center;
+    }
+
+    #main-menu>ul>li:first-child {
+        padding-left: 0px;
+        background: none;
+    }
+
+#lecture-search-form{
+    display: inline-block;
+    width: 288px;
+    height: 35px;
+    border: 5px solid #8cba34;
+}
+    #lecture-search-form form{
+        display: flex;
+    }
+    #lecture-search-form input[type=text]{
+        width: calc(100% - 31px - 55px);/*222px;*/
+        height: 25px;
+        border: 0;
+        background: yellow;
+    }
+    #lecture-search-form input[type=submit]{
+        width: 31px;
+        height: 25px;
+        text-indent: -999px;
+        border: none;
+        background: url(../images/btn-zoom.png) no-repeat center;
+        border-left:  1px solid #8cba3a;
+    }
+    #lecture-search-form label{
+        display: inline-block;
+        width: 65px;
+        height: 25px;
+        line-height: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+.menu-box{
+    display: flex;
+}
+
+#right-menu{
+    display: flex;
+    flex-direction: column;
+}
+
+/* 방이 아니라 가구이므로 일반 컨텐츠처럼 놓일 수 있도록 inline-block을 해준다 */
+#member-menu{
+    display: inline-block;
+}
+    #member-menu ul{
+        display: flex;
+        justify-content: flex-end;
+    }
+    #member-menu>ul>li{
+        font-family: "맑은 고딕", "고딕", sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        padding-left: 9px;
+        background: url("../images/bg-main-menu-vsp.png") no-repeat 5px center;
+    }
+    #member-menu>ul>li:first-child{
+        padding-left: 0px;
+        background: none;
+    }
+
+#direct-menu{
+    display: inline-block;
+}
+    #direct-menu > ul{
+        display: flex;
+        justify-content: flex-end;
+    }
+    #direct-menu > ul > li{
+        width: 72px;
+        height: 17px;
+        text-indent: -999px;
+        overflow: hidden;
+    }
+    #direct-menu > ul > li:first-child{
+        background: url("../images/txt-customer.png") no-repeat center;
+    }
+    #direct-menu > ul > li:last-child{
+        background: url("../images/txt-mypage.png") no-repeat center;
+    }
+
+/* ======== header 가구 배치 ========= */
+
+#header .content-box{
+    position: relative;
+}
+
+#logo {
+    position: absolute;
+    top:23px;
+}
+
+#main-menu {
+    position: absolute;
+    top:27px;
+    left: 200px;
+}
+
+#lecture-search-form {
+    position: absolute;
+    top:21px;
+    left: 468px;
+}
+
+#member-menu {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+}
+
+#direct-menu {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+}
+
+/* ------- aside 가구들 -------- */
+
+#aside-title{
+    font-family: "맑은 고딕", "고딕", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+}
+
+#customer-menu{
+    font-family: "맑은 고딕", "고딕", sans-serif;
+    font-weight: bold;
+    color: #808080;
+}
+
+    #customer-menu>h1{
+        color: #ffffff;
+        height: 27px;
+        line-height: 27px;
+        padding-left: 10px;
+        font-size: 12px;
+        font-weight: bold;
+        text-shadow: 0.5px 0.5px 1px #000000;
+        background: url(../images/bg-aside-sub-title.png) no-repeat 0px 0px;
+    }
+
+    #customer-menu li{
+        background: url(../images/bg-aside-menu-hsp.png) no-repeat left bottom;
+        height: 26px;
+        line-height: 26px;
+    }
+
+        #customer-menu a{
+            padding-left: 26px;
+            background: url(../images/icon-current.png) no-repeat 12px center;
+        }
+
+
+    #coworker>h1{
+        font-family: "맑은 고딕", "고딕", sans-serif;
+        font-size: 13px;
+        color: #000000;
+        padding-left: 26px;
+        background: url("../images/icon-recommend.png") no-repeat;
+    }
+
+        #coworker>ul{
+            margin-top:10px;
+        }
+        #coworker li {
+            width:180px;
+            height: 50px;
+            text-indent: -999px;
+            overflow: hidden;
+        }
+        #coworker li:first-child{
+            background: url(../images/notepubs.png) no-repeat center;
+        }
+        #coworker li:nth-child(2){
+            background: url(../images/namoolab.png) no-repeat center;
+        }
+        #coworker li:nth-child(3){
+            background: url(../images/hanbit.png) no-repeat center;
+        }
+/* ======== aside 가구 배치 ========= */
+
+#aside-title{
+    margin-top: 43px;
+}
+
+#customer-menu{
+    margin-top: 45px;
+}
+
+#coworker{
+    margin-top: 20px;
+}
+
+/* ======== main 가구 ========= */
+main>section>h1{
+    font-family: "맑은 고딕", "고딕", sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    color: #646464;
+    padding-left: 25px;
+    background: url(../images/icon-main-title.png) no-repeat left center;
+}
+
+#breadcrumb {
+    display: inline-block;
+}
+#breadcrumb ol{
+    display: flex;
+    background: url("../images/icon-home.png") no-repeat center left;
+    padding-left: 20px;
+}
+#breadcrumb ol li{
+    background: url("../images/icon-path.png") no-repeat center left;
+    padding-left: 10px;
+}
+#breadcrumb ol li:first-child{
+    padding-left: 0px;
+    background: none;
+}
+
+#notice table {
+    border-top: 2px solid #8cba34;
+    border-spacing: 0px;
+    width: 100%;
+    table-layout: fixed;
+    --border-collapse: collapse;
+}
+    #notice table tr {
+        height: 30px;
+        line-height: 30px
+    }
+    #notice table thead tr{
+        background: #f5f5f5;
+        
+    }
+    #notice table td {
+        text-align: center;
+        border-bottom: 1px solid #e9e9e9;
+        padding: 0px;
+    }
+    #notice table thead td{
+        background: url("../images/bg-title-sp.png") no-repeat left center;
+    }
+    #notice table thead td:first-child{
+        background: none;
+    }
+    #notice table .num{
+        width: 60px;
+    }
+    #notice table .title{
+        width: 400px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    #notice table tbody .title{
+        text-align: left;
+        width: 400px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-indent: 10px;
+    }
+    #notice table tbody .title span{
+        color:red;
+        font-weight: bold;'
+    }
+    #notice table .writer{
+        width: 100px;
+    }
+    #notice table .date{
+        width: 100px;
+    }
+    #notice table .hit{
+        width: 60px;
+    }
+
+#pager{
+    display: inline-block;
+}
+    #pager ul{
+        display: flex;
+    }
+    #pager li{
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        line-height: 15px;
+    }
+
+
+
+
+
+
+
+
+
+
+
