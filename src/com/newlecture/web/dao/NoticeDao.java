@@ -19,5 +19,6 @@ public interface NoticeDao {
    int insert(Notice notice) throws ClassNotFoundException, SQLException;
    int update(Notice notice) throws ClassNotFoundException, SQLException;
    int delete(int id) throws ClassNotFoundException, SQLException;
+   int getLastId() throws ClassNotFoundException, SQLException;
    
 }

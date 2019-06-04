@@ -43,50 +43,41 @@
 			
 			<main>
 			<section>
-				<h1>공지사항</h1>
+				<h1>로그인</h1>
 				<section id="breadcrumb">
 					<h1 class="d-none">경로</h1>
 					<ol>
 						<li>home</li>
-						<li>고객센터</li>
-						<li>공지사항</li>
+						<li>member</li>
+						<li>login</li>
 					</ol>
 				</section>
 				<section>
-					<h1>공지사항 내용</h1>
+					<h1>로그인 폼</h1>
+					<c:if test="${param.error==1}">
+					<div style="color:red">
+						아이디 또는 비밀번호가 유효하지 않습니다.
+					</div>
+					</c:if>
+					<form method="post">
 					<table>
 						<tbody>
 							<tr>
-								<th>제목</th>
-								<td>${notice.title}</td>
+								<th>아이디</th>
+								<td><input type="text" name ="id"></td>
 							</tr>
 							<tr>
-								<th>작성일</th>
-								<td>${notice.regDate}</td>
+								<th>비밀번호</th>
+								<td><input type="password" name="pwd"></td>
 							</tr>
 							<tr>
-								<th>첨부파일</th>
-								<td>
-								<c:forEach var="file" items="${noticeFiles}">
-									<a href="/upload/${file.name}" download>${file.name}</a>
-								</c:forEach>
-								</td>
-							</tr>
-							<tr>
-								<th>내용</th>
-								<td>${notice.content}</td>
+								<td colspan="2"><input type="submit" name="로그인"></td>
 							</tr>
 						</tbody>
 					</table>
+					</form>
 				</section>
 			</section>
-			<section>
-                   <h1></h1>
-                   <ul>
-                      <li><span>이전글</span><a href="detail?id=${prev.id}">${prev.title}</a></li>
-                      <li><span>다음글</span><a href="detail?id=${next.id}">${next.title}</a></li>
-                   </ul>
-                </section>
 			</main>
 			<!-- <div style="clear:left;"></div>
             css hack // 그리고 이에대한 더 나은 방법을 만듦 -> clearfix -->

@@ -24,7 +24,7 @@
 <body>
 	<!-- --header block------------------------------------------------------------------ -->
 	
-	<jsp:include page="../inc/header.jsp"></jsp:include>
+	<jsp:include page="../../inc/header.jsp"></jsp:include>
 
 	<!-- --visual block------------------------------------------------------------------ -->
 
@@ -39,7 +39,7 @@
 		<!-- <div class="content-box clear-fix"> -->
 		<div class="content-box">
 		
-			<jsp:include page="../inc/aside.jsp"></jsp:include>
+			<jsp:include page="../../inc/aside.jsp"></jsp:include>
 			
 			<main>
 			<section>
@@ -78,6 +78,10 @@
 							</tr>
 						</tbody>
 					</table>
+					<div>
+						<a href="edit?id=${notice.id }">수정</a>
+						<a href="del?id=${notice.id }">삭제</a>
+					</div>
 				</section>
 			</section>
 			<section>
@@ -95,7 +99,7 @@
 
 	<!-- --footer block------------------------------------------------------------------ -->
 
-	<jsp:include page="../inc/footer.jsp"></jsp:include>
+	<jsp:include page="../../inc/footer.jsp"></jsp:include>
 
 </body>
 

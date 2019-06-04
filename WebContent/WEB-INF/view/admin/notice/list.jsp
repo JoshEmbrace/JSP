@@ -23,7 +23,7 @@
 
 <body>
     <!-- --header block------------------------------------------------------------------ -->
-	<jsp:include page="../inc/header.jsp"></jsp:include>
+	<jsp:include page="../../inc/header.jsp"></jsp:include>
 
     <!-- --visual block------------------------------------------------------------------ -->
 
@@ -39,7 +39,7 @@
         <!-- <div class="content-box clear-fix"> -->
         <div class="content-box">
             
-            <jsp:include page="../inc/aside.jsp"></jsp:include>
+            <jsp:include page="../../inc/aside.jsp"></jsp:include>
             
             <main>
                 <section>
@@ -66,6 +66,7 @@
                     </section>
                     <section id="notice">
                         <h1 class="d-none">공지사항 목록</h1>
+                        <form method="post">
                         <table>
                             <thead>
                                 <tr>
@@ -78,19 +79,34 @@
                             </thead>
                             <tbody>
                             <c:forEach var="n" items="${list}">
+                           <c:if test="${param.eid == n.id}">
                               <tr>
                                  <td class="num">${n.id}</td>
-                                 <td class="title"><a href="detail?id=${n.id}">
-                                       ${n.title} </a> <span>[23]</span>
+                                 <td class="title">
+                                    <input type="text" name="title" value="${n.title}">
+                                    <input type="hidden" name="id" value="${n.id }">
+                                    <span><input type="submit" value="저장"></span>
                                  </td>
                                  <td class="writer">${n.writerId}</td>
                                  <td class="date">${n.regDate}</td>
                                  <td class="hit">${n.hit}</td>
                               </tr>
+                           </c:if>
+                           <c:if test="${param.eid != n.id}">
+                              <tr>
+                                 <td class="num">${n.id}</td>
+                                 <td class="title"><a href="detail?id=${n.id}">
+                                       ${n.title} </a> <span>[23]</span> <span><a
+                                       href="list?eid=${n.id}">수정</a><a href="">삭제</a></span></td>
+                                 <td class="writer">${n.writerId}</td>
+                                 <td class="date">${n.regDate}</td>
+                                 <td class="hit">${n.hit}</td>
+                              </tr>
+                           </c:if>
                         </c:forEach>
                             </tbody>
                         </table>
- 
+                        </form>
                         <div>
                         	<a href="reg">글쓰기</a>
                         </div>
@@ -128,7 +144,7 @@
 
     <!-- --footer block------------------------------------------------------------------ -->
 
-	<jsp:include page="../inc/footer.jsp"></jsp:include>
+	<jsp:include page="../../inc/footer.jsp"></jsp:include>
 
 </body>
 

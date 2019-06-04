@@ -244,4 +244,27 @@ public class OracleNoticeDao implements NoticeDao {
 		return result;
 	}
 
+	@Override
+	public int getLastId() throws ClassNotFoundException, SQLException {
+		
+		int id = -1;
+		String sql = "SELECT ID FROM (SELECT * FROM NOTICE ORDER BY REGDATE DESC) WHERE ROWNUM = 1";
+		String url = "jdbc:oracle:thin:@192.168.0.15:1521/xepdb1";
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection(url, "\"newlec\"", "l4class");
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+		
+		while(rs.next()) {
+			id = rs.getInt("Id");
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+
+		return id;
+		
+	}
+
 }

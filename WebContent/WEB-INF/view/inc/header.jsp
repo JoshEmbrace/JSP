@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <header id="header">
 	<!-- <div style="background:rgb(255, 172, 199); width:100px;">BBBB</div> -->
 	<div class="content-box">
@@ -30,7 +31,12 @@
 					<h1 class="d-none">회원 메뉴</h1>
 					<ul>
 						<li><a href="">HOME</a></li>
-						<li><a href="">로그인</a></li>
+						<c:if test="${not empty id}">
+							<li><a href="/member/logout">로그아웃</a></li>
+						</c:if>
+						<c:if test="${empty id}">
+							<li><a href="/member/login">로그인</a></li>
+						</c:if>
 						<li><a href="">회원가입</a></li>
 					</ul>
 				</nav>

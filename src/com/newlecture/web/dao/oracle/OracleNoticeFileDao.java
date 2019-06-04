@@ -10,14 +10,14 @@ import java.util.List;
 
 import com.newlecture.web.entity.NoticeFile;
 
-public class NoticeFileDao implements com.newlecture.web.dao.NoticeFileDao {
+public class OracleNoticeFileDao implements com.newlecture.web.dao.NoticeFileDao {
 
 	@Override
 	public List<NoticeFile> getListByNoticeId(int noticeId) throws ClassNotFoundException, SQLException {
 
 		List<NoticeFile> list = new ArrayList<>();
 
-		String sql = "SELECT * FROM NOTICE_FILE WHERE NOTICE_ID ";
+		String sql = "SELECT * FROM NOTICE_FILE WHERE NOTICE_ID  = ?  ";
 
 		String url = "jdbc:oracle:thin:@192.168.0.15:1521/xepdb1";
 		Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -53,7 +53,7 @@ public class NoticeFileDao implements com.newlecture.web.dao.NoticeFileDao {
 		 * notice.getHit());
 		 */
 		String sql = "INSERT INTO NOTICE_FILE(ID, NAME, NOTICE_ID)" 
-		 + "values(NOTICE_SEQ.NEXTVAL, ? ,?)";
+		 + "values(NOTICE_FILE_SEQ.NEXTVAL, ? ,?)";
 		String url = "jdbc:oracle:thin:@192.168.0.15:1521/xepdb1";
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection con = DriverManager.getConnection(url, "\"newlec\"", "l4class");

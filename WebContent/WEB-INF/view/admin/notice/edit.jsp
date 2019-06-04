@@ -24,7 +24,7 @@
 <body>
 	<!-- --header block------------------------------------------------------------------ -->
 	
-	<jsp:include page="../inc/header.jsp"></jsp:include>
+	<jsp:include page="../../inc/header.jsp"></jsp:include>
 
 	<!-- --visual block------------------------------------------------------------------ -->
 
@@ -39,7 +39,7 @@
 		<!-- <div class="content-box clear-fix"> -->
 		<div class="content-box">
 		
-			<jsp:include page="../inc/aside.jsp"></jsp:include>
+			<jsp:include page="../../inc/aside.jsp"></jsp:include>
 			
 			<main>
 			<section>
@@ -53,40 +53,43 @@
 					</ol>
 				</section>
 				<section>
-					<h1>공지사항 내용</h1>
-					<table>
-						<tbody>
-							<tr>
-								<th>제목</th>
-								<td>${notice.title}</td>
-							</tr>
-							<tr>
-								<th>작성일</th>
-								<td>${notice.regDate}</td>
-							</tr>
-							<tr>
-								<th>첨부파일</th>
-								<td>
-								<c:forEach var="file" items="${noticeFiles}">
-									<a href="/upload/${file.name}" download>${file.name}</a>
-								</c:forEach>
-								</td>
-							</tr>
-							<tr>
-								<th>내용</th>
-								<td>${notice.content}</td>
-							</tr>
-						</tbody>
-					</table>
+					<form action="edit" method="post">
+						<h1>공지사항 내용</h1>
+						<table>
+							<tbody>
+								<tr>
+									<th>카테고리</th>
+									<td>
+										<select name="category">
+											<option value="학습">학습</option>
+											<option value="결제">결제</option>
+											<option value="기타">기타</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th>제목</th>
+									<td><input value="${notice.title}" name="title"></td>
+								</tr>
+								<tr>
+									<th>작성일</th>
+									<td>${notice.regDate}</td>
+								</tr>
+								<tr>
+									<th>내용</th>
+									<td><textarea name="content">${notice.content}</textarea></td>
+								</tr>
+							</tbody>
+						</table>
+						<div>
+							<input type="hidden" name="id" value="${notice.id}">
+							<input type="submit" value="저장">
+							<a href="detail?id=${notice.id }">취소</a>
+						</div>
+					</form>
 				</section>
+
 			</section>
-			<section>
-                   <h1></h1>
-                   <ul>
-                      <li><span>이전글</span><a href="detail?id=${prev.id}">${prev.title}</a></li>
-                      <li><span>다음글</span><a href="detail?id=${next.id}">${next.title}</a></li>
-                   </ul>
-                </section>
 			</main>
 			<!-- <div style="clear:left;"></div>
             css hack // 그리고 이에대한 더 나은 방법을 만듦 -> clearfix -->
@@ -95,7 +98,7 @@
 
 	<!-- --footer block------------------------------------------------------------------ -->
 
-	<jsp:include page="../inc/footer.jsp"></jsp:include>
+	<jsp:include page="../../inc/footer.jsp"></jsp:include>
 
 </body>
 

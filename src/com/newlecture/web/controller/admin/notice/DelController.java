@@ -1,4 +1,4 @@
-package com.newlecture.web.controller.notice;
+package com.newlecture.web.controller.admin.notice;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -11,23 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.newlecture.web.dao.NoticeDao;
 import com.newlecture.web.dao.oracle.OracleNoticeDao;
-import com.newlecture.web.entity.Notice;
 
-@WebServlet("/notice/list")
-public class ListController extends HttpServlet {
+@WebServlet("/admin/notice/del")
+public class DelController extends HttpServlet {
+	
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int page =1; 
-		String p_= request.getParameter("p");
-		if(p_ != null && !p_.equals(""))
-			page = Integer.parseInt(p_);
 		
 		NoticeDao noticeDao = new OracleNoticeDao();
 		
+		Integer id = Integer.parseInt(request.getParameter("id"));
+		
 		try {
-			request.setAttribute("list", noticeDao.getList(page));
+			noticeDao.delete(id);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,10 +33,9 @@ public class ListController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("/WEB-INF/view/notice/list.jsp").forward(request, response);
 		
+		response.sendRedirect("list");
 		
 	}
-	
 	
 }

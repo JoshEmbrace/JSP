@@ -20,6 +20,10 @@ public class NoticeFile {
 	}
 
 
+	public NoticeFile() {
+		
+	}
+
 	public int getId() {
 		return id;
 	}

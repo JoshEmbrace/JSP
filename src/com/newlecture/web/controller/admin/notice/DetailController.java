@@ -1,4 +1,4 @@
-package com.newlecture.web.controller.notice;
+package com.newlecture.web.controller.admin.notice;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -14,23 +14,17 @@ import com.newlecture.web.dao.NoticeFileDao;
 import com.newlecture.web.dao.oracle.OracleNoticeDao;
 import com.newlecture.web.dao.oracle.OracleNoticeFileDao;
 
-@WebServlet("/notice/detail")
+@WebServlet("/admin/notice/detail")
 public class DetailController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		Integer id = Integer.parseInt(request.getParameter("id"));
 
-		if(request.getSession().getAttribute("id")==null) {
-			response.sendRedirect("../member/login?return-url=/notice/detail?id="+id);
-			return;
-		}
-		
 		NoticeDao noticeDao = new OracleNoticeDao();
 		NoticeFileDao noticeFileDao = new OracleNoticeFileDao();
 		
+		Integer id = Integer.parseInt(request.getParameter("id"));
 		
 		try {
 			request.setAttribute("notice", noticeDao.get(id));
