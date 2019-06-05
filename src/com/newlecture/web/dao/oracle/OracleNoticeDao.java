@@ -13,7 +13,7 @@ import com.newlecture.web.dao.NoticeDao;
 import com.newlecture.web.entity.Notice;
 
 public class OracleNoticeDao implements NoticeDao {
-
+	
 	@Override
 	public List<NoticeView> getList() throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
@@ -57,7 +57,7 @@ public class OracleNoticeDao implements NoticeDao {
 					);
 			list.add(notice);
 		}
-
+		
 		rs.close();
 		st.close();
 		con.close();
@@ -265,6 +265,37 @@ public class OracleNoticeDao implements NoticeDao {
 
 		return id;
 		
+	}
+
+	@Override
+	public int getCount() throws ClassNotFoundException, SQLException {
+		
+		return getCount("TITLE","");
+	}
+
+	@Override
+	public int getCount(String field, String query) throws ClassNotFoundException, SQLException {
+		int count = 0;
+		
+		String sql = "SELECT COUNT(ID) COUNT FROM NOTICE" + " WHERE " + field + "  LIKE ?";
+
+		String url = "jdbc:oracle:thin:@192.168.0.15:1521/xepdb1";
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection(url, "\"newlec\"", "l4class");
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, query);
+
+		ResultSet rs = st.executeQuery();
+
+		if (rs.next()) {
+			count = rs.getInt("COUNT");
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+
+		return count;
 	}
 
 }
